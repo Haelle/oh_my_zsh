@@ -3,11 +3,14 @@
   stat:
     path: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
   register: autosuggestions_directory
+  become: 'yes'
   become_user: '{{ item }}'
 
 - name: Install autosuggestions plugin
   git:
     repo: https://github.com/zsh-users/zsh-autosuggestions
     dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    version: v0.6.3
   when: not autosuggestions_directory.stat.exists
+  become: 'yes'
   become_user: '{{ item }}'

@@ -1,6 +1,6 @@
 ---
 # Mandatory params
-#users:
+# users:
 #  - foo
 #  - bar
 zsh_plugins:

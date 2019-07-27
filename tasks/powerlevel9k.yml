@@ -3,13 +3,16 @@
   stat:
     path: ~/.oh-my-zsh/custom/themes/powerlevel9k
   register: powerline9k_directory
+  become: 'yes'
   become_user: '{{ item }}'
 
 - name: Install PowerLevel9k theme
   git:
     repo: https://github.com/bhilburn/powerlevel9k.git
     dest: ~/.oh-my-zsh/custom/themes/powerlevel9k
+    version: v0.6.7
   when: not powerline9k_directory.stat.exists
+  become: 'yes'
   become_user: '{{ item }}'
 
 - name: Set Powerline9k as zsh theme
@@ -18,4 +21,5 @@
     regexp: '^ZSH_THEME='
     line: 'ZSH_THEME="powerlevel9k/powerlevel9k"'
     state: present
+  become: 'yes'
   become_user: '{{ item }}'
