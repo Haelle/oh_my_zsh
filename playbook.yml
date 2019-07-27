@@ -1,6 +1,0 @@
----
-- hosts: localhost
-  roles:
-    - role: oh_my_zsh
-      users:
-        - foo

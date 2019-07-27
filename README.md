@@ -23,14 +23,13 @@ List of zsh plugins, available plugins are listed on [oh-my-zsh plugins page](ht
 
 ## Example Playbook
 
-An example playbook is provided for localhost. To use it create a symlink or move this repository in one of your Ansible roles directory (ie: `/etc/ansible/roles`) with something like : `cd /etc/ansible/roles & sudo ln -s /path/to/oh_my_zsh .`
-
 ```yaml
 - hosts: localhost
   roles:
     - role: oh_my_zsh
       users:
         - foo
+```
 
 ## License
 
