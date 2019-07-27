@@ -1,2 +1,17 @@
 ---
-# tasks file for oh_my_zsh
+- name: Install zsh, git, wget, powerline
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - zsh
+    - git
+    - wget
+    - powerline
+    - fonts-powerline
+  tags: zsh
+
+- name: Install oh-my-zsh for users
+  include: install_for_user.yml
+  with_items: '{{ users }}'
+  tags: zsh

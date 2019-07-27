@@ -1,38 +1,37 @@
-Role Name
-=========
+# Ansible Oh-my-zsh
 
-A brief description of the role goes here.
+An Ansible role to install oh-my-zsh with few plugins.
 
-Requirements
-------------
+## Role Variables
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+All variables are in `defaults/main.yml`.
 
-Role Variables
---------------
+### `users`
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+_This is mandatory._
 
-Dependencies
-------------
+List of Unix users:
+```yaml
+users:
+  - foo
+  - bar
+```
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+### `zsh_plugins`
 
-Example Playbook
-----------------
+List of zsh plugins, available plugins are listed on [oh-my-zsh plugins page](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins)
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+## Example Playbook
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+An example playbook is provided for localhost. To use it create a symlink or move this repository in one of your Ansible roles directory (ie: `/etc/ansible/roles`) with something like : `cd /etc/ansible/roles & sudo ln -s /path/to/oh_my_zsh .`
 
-License
--------
+```yaml
+- hosts: localhost
+  roles:
+    - role: oh_my_zsh
+      users:
+        - foo
+
+## License
 
 BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).

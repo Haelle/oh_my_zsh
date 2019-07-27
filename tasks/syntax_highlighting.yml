@@ -1,0 +1,13 @@
+---
+- name: Check if syntax highlighting already installed
+  stat:
+    path: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  register: syntax_highlighting_directory
+  become_user: '{{ item }}'
+
+- name: Install syntax highlighting plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  when: not syntax_highlighting_directory.stat.exists
+  become_user: '{{ item }}'

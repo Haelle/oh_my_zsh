@@ -1,0 +1,13 @@
+---
+- name: Check if autosuggestions already installed
+  stat:
+    path: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  register: autosuggestions_directory
+  become_user: '{{ item }}'
+
+- name: Install autosuggestions plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  when: not autosuggestions_directory.stat.exists
+  become_user: '{{ item }}'

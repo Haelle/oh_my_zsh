@@ -1,2 +1,19 @@
 ---
-# defaults file for oh_my_zsh
+# Mandatory params
+#users:
+#  - foo
+#  - bar
+zsh_plugins:
+  - ansible
+  - bundler
+  - command-not-found
+  - common-aliases
+  - dirhistory
+  - encode64
+  - jsontools
+  - rails
+  - ruby
+  - sudo
+  - web-search
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting

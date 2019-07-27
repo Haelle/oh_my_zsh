@@ -1,0 +1,12 @@
+---
+- name: Set zsh as default interpreter
+  user:
+    name: '{{ item }}'
+    shell: /usr/bin/zsh
+
+- include: oh_my_zsh.yml
+- include: powerlevel9k.yml
+- include: autosuggestions.yml
+- include: syntax_highlighting.yml
+- include: plugins.yml
+- include: functions.yml

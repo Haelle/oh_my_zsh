@@ -1,0 +1,8 @@
+---
+- name: Enable plugins
+  lineinfile:
+    path: ~/.zshrc
+    regexp: '^plugins='
+    line: "plugins=({{ zsh_plugins | join(' ') }})"
+    state: present
+  become_user: '{{ item }}'
