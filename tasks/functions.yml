@@ -1,7 +1,0 @@
----
-- name: Copy zsh functions
-  copy:
-    src: g.zsh
-    dest: ~/.oh-my-zsh/custom/g.zsh
-  become: 'yes'
-  become_user: '{{ item }}'

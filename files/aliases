@@ -1,0 +1,28 @@
+# Unix
+alias tree="tree -LAC 3"
+alias ssh-id='eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa'
+
+# ls
+alias lsn='stat -c "%a %n"'
+
+# grep
+alias grep='grep --color=auto'
+
+# Rails
+alias rsw='rails s -b www.alxs.fr -p 3000'
+alias test-reset="RAILS_ENV=test rails db:environment:set db:setup"
+alias sr="spring rspec"
+
+# Mutant
+alias mutant='RAILS_ENV=test bundle exec mutant -r ./config/environment --use rspec'
+
+# Rubocop
+alias rubocop='rubocop --format fuubar'
+
+# bundle
+alias bg='bundle exec guard'
+
+flip() { echo "（╯°□°）╯ ┻━┻"; }
+
+# Python
+alias pipr='sudo -H pip install -r requirements.pip'

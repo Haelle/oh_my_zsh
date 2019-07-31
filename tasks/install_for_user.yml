@@ -8,5 +8,31 @@
 - include: powerlevel9k.yml
 - include: autosuggestions.yml
 - include: syntax_highlighting.yml
-- include: plugins.yml
-- include: functions.yml
+- include: aliases.yml
+
+- name: Enable plugins
+  lineinfile:
+    path: ~/.zshrc
+    regexp: '^plugins='
+    line: "plugins=({{ zsh_plugins | join(' ') }})"
+    state: present
+  become: 'yes'
+  become_user: '{{ item }}'
+
+- name: Copy zsh functions
+  copy:
+    src: g.zsh
+    dest: ~/.oh-my-zsh/custom/g.zsh
+  become: 'yes'
+  become_user: '{{ item }}'
+
+- name: Enable NVM support
+  blockinfile:
+    path: ~/.zshrc
+    marker: "# {mark} ANSIBLE BLOCK"
+    block: |
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+      [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  become: 'yes'
+  become_user: '{{ item }}'

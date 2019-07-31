@@ -1,0 +1,13 @@
+---
+- name: Copy aliases
+  copy:
+    src: aliases
+    dest: ~/.aliases
+  become: 'yes'
+  become_user: '{{ item }}'
+
+- name: Enable aliases
+  lineinfile:
+    path: ~/.zshrc
+    line: source $HOME/.aliases
+    create: 'yes'
