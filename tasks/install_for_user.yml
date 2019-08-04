@@ -26,6 +26,14 @@
   become: 'yes'
   become_user: '{{ item }}'
 
+- name: Set Vim a EDITOR
+  lineinfile:
+    path: ~/.zshrc
+    line: 'export EDITOR=vim'
+    state: present
+  become: 'yes'
+  become_user: '{{ item }}'
+
 - name: Enable NVM support
   blockinfile:
     path: ~/.zshrc
