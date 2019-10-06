@@ -31,6 +31,12 @@ List of zsh plugins, available plugins are listed on [oh-my-zsh plugins page](ht
         - foo
 ```
 
+## Linters
+```shell
+yamllint **/*.yml
+ansible-lint **/*.yml
+```
+
 ## License
 
 BSD

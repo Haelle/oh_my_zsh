@@ -3,6 +3,7 @@
   stat:
     path: ~/.fzf
   register: fzf_directory
+  become: 'yes'
   become_user: '{{ item }}'
 
 - name: Clone FZF
@@ -11,12 +12,14 @@
     dest: ~/.fzf
     version: 0.18.0
   when: not fzf_directory.stat.exists
+  become: 'yes'
   become_user: '{{ item }}'
 
 - name: Install FZF
-  shell: ~/.fzf/install --bin
+  command: ~/.fzf/install --bin
   args:
     chdir: ~/
+  become: 'yes'
   become_user: '{{ item }}'
   when: not fzf_directory.stat.exists
 
@@ -26,4 +29,5 @@
     regexp:
     line: '[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh'
     state: present
+  become: 'yes'
   become_user: '{{ item }}'
