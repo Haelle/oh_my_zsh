@@ -1,0 +1,16 @@
+---
+- name: check if navi already installed
+  stat:
+    path: ~/.oh-my-zsh/custom/plugins/navi
+  register: navi_directory
+  become: 'yes'
+  become_user: '{{ item }}'
+
+- name: Install navi plugin
+  git:
+    repo: https://github.com/denisidoro/navi
+    dest: ~/.oh-my-zsh/custom/plugins/navi
+    version: 0.12.0
+  when: not navi_directory.stat.exists
+  become: 'yes'
+  become_user: '{{ item }}'

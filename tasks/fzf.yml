@@ -1,0 +1,29 @@
+---
+- name: check if FZF already installed
+  stat:
+    path: ~/.fzf
+  register: fzf_directory
+  become_user: '{{ item }}'
+
+- name: Clone FZF
+  git:
+    repo: https://github.com/junegunn/fzf.git
+    dest: ~/.fzf
+    version: 0.18.0
+  when: not fzf_directory.stat.exists
+  become_user: '{{ item }}'
+
+- name: Install FZF
+  shell: ~/.fzf/install --bin
+  args:
+    chdir: ~/
+  become_user: '{{ item }}'
+  when: not fzf_directory.stat.exists
+
+- name: Enable FZF in zsh
+  lineinfile:
+    path: ~/.zshrc
+    regexp:
+    line: '[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh'
+    state: present
+  become_user: '{{ item }}'

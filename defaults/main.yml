@@ -10,7 +10,9 @@ zsh_plugins:
   - common-aliases
   - dirhistory
   - encode64
+  - fzf
   - jsontools
+  - navi
   - rails
   - ruby
   - sudo
