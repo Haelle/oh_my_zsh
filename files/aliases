@@ -26,3 +26,7 @@ flip() { echo "（╯°□°）╯ ┻━┻"; }
 
 # Python
 alias pipr='sudo -H pip install -r requirements.pip'
+
+# Vim
+alias update-vim='(cd ~/.vim_runtime && git stash && git pull --rebase && git stash pop)'
+alias vfzf='vim -o `fzf`'
