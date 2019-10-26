@@ -10,7 +10,7 @@
   git:
     repo: https://github.com/denisidoro/navi
     dest: ~/.oh-my-zsh/custom/plugins/navi
-    version: 0.12.0
+    version: v0.14.3
   when: not navi_directory.stat.exists
   become: 'yes'
   become_user: '{{ item }}'
