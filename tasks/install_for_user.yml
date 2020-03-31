@@ -28,6 +28,13 @@
   become: 'yes'
   become_user: '{{ item }}'
 
+- name: Copy JWT functions
+  copy:
+    src: jwt.zsh
+    dest: ~/.oh-my-zsh/custom/jwt.zsh
+  become: 'yes'
+  become_user: '{{ item }}'
+
 - name: Set Vim a EDITOR
   lineinfile:
     path: ~/.zshrc
