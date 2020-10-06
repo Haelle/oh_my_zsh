@@ -1,0 +1,25 @@
+---
+- name: Check if Powerlevel10k already installed
+  stat:
+    path: ~/.oh-my-zsh/custom/themes/powerlevel10k
+  register: powerline10k_directory
+  become: 'yes'
+  become_user: '{{ item }}'
+
+- name: Install PowerLevel10k theme
+  git:
+    repo: https://github.com/romkatv/powerlevel10k.git
+    dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
+    version: v1.13.0
+  when: not powerline10k_directory.stat.exists
+  become: 'yes'
+  become_user: '{{ item }}'
+
+- name: Set Powerline10k as zsh theme
+  lineinfile:
+    path: ~/.zshrc
+    regexp: '^ZSH_THEME='
+    line: 'ZSH_THEME="powerlevel10k/powerlevel10k"'
+    state: present
+  become: 'yes'
+  become_user: '{{ item }}'

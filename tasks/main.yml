@@ -7,8 +7,6 @@
     - zsh
     - git
     - wget
-    - powerline
-    - fonts-powerline
   tags: zsh
 
 - name: Install oh-my-zsh for users

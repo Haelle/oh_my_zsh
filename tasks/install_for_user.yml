@@ -7,7 +7,8 @@
 - include: oh_my_zsh.yml
 - include: fzf.yml
 - include: navi.yml
-- include: powerlevel9k.yml
+- include: meslo_font.yml
+- include: powerlevel10k.yml
 - include: autosuggestions.yml
 - include: syntax_highlighting.yml
 - include: aliases.yml

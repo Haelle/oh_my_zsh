@@ -2,7 +2,8 @@
 
 An Ansible role to install oh-my-zsh with few plugins.
 
-This role install Monospace-regular fonts for powerline, enable it in the terminal
+This role install Meslo LGS NF fonts for PowerLevel10k, run `p10k configure` in 
+the terminal to configure the prompt (it should run automatically)
 
 ## Usages
 - Navi with `<Ctrl+G>`

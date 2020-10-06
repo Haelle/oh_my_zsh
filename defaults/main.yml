@@ -16,6 +16,9 @@ zsh_plugins:
   - rails
   - ruby
   - sudo
+  - vscode
   - web-search
   - zsh-autosuggestions
   - zsh-syntax-highlighting
+
+fonts_path: ~/.local/share/fonts/
