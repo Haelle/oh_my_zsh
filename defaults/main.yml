@@ -8,14 +8,20 @@ zsh_plugins:
   - bundler
   - command-not-found
   - common-aliases
+  - debian
   - dirhistory
+  - docker
+  - docker-compose
   - encode64
   - fzf
+  - gem
   - jsontools
   - navi
   - rails
   - ruby
   - sudo
+  - systemd
+  - tmux
   - vscode
   - web-search
   - zsh-autosuggestions

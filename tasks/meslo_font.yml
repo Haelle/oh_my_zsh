@@ -1,4 +1,10 @@
 ---
+- name: Ensure fonts directory exists
+  file:
+    path: "{{ fonts_path }}"
+    mode: "755"
+    state: directory
+
 - name: Download font Regular
   get_url:
     url: https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
