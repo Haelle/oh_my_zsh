@@ -2,7 +2,7 @@
 - name: Ensure fonts directory exists
   file:
     path: "{{ fonts_path }}"
-    mode: "755"
+    mode: "0755"
     state: directory
 
 - name: Download font Regular

@@ -2,12 +2,14 @@
 
 An Ansible role to install oh-my-zsh with few plugins.
 
-This role install Meslo LGS NF fonts for PowerLevel10k, run `p10k configure` in 
+This role install Meslo LGS NF fonts for PowerLevel10k, run `p10k configure` in
 the terminal to configure the prompt (it should run automatically)
 
 ## Usages
+
 - Navi with `<Ctrl+G>`
 - fzf alias to vim: `vfzf`
+- `Ctrl-u` : clear current prompt
 
 ## Role Variables
 
@@ -18,6 +20,7 @@ All variables are in `defaults/main.yml`.
 _This is mandatory._
 
 List of Unix users:
+
 ```yaml
 users:
   - foo
@@ -39,12 +42,14 @@ List of zsh plugins, available plugins are listed on [oh-my-zsh plugins page](ht
 ```
 
 ## Linters
+
 ```shell
 yamllint **/*.yml
 ansible-lint **/*.yml
 ```
 
 ## Development usage
+
 To run it locally create a symlink : `cd /etc/ansible/roles & sudo ln -s /path/to/oh_my_zsh .`
 
 ## License
