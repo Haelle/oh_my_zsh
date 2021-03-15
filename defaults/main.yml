@@ -15,6 +15,7 @@ zsh_plugins:
   - encode64
   - fzf
   - gem
+  - gitignore
   - jsontools
   - navi
   - rails

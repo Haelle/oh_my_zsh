@@ -23,10 +23,19 @@ alias rubocop='rubocop --format fuubar'
 alias bg='bundle exec guard'
 
 flip() { echo "（╯°□°）╯ ┻━┻"; }
+party() { echo " ♪┏(・o･)┛♪"; }
+fuck() { echo " 🖕( °︡ ෴ °︠ )"; }
+victory() { echo " ୧(•̀ᴗ•́)୨"; }
 
 # Python
 alias pipr='sudo -H pip install -r requirements.pip'
 
+# npx NO INSTALL
+alias npx ='npx --no-install'
+
 # Vim
 alias update-vim='(cd ~/.vim_runtime && git stash && git pull --rebase && git stash pop)'
 alias vfzf='vim -o `fzf`'
+
+# Read SSL Certificates
+alias ssl-cert='openssl x509 -text -noout -in'
