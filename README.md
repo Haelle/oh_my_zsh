@@ -12,6 +12,7 @@ the terminal to configure the prompt (it should run automatically)
 - `Ctrl-u` : clear current prompt
 - `pp_json xxx` : pretty print JSON
 - `Esc Esc` : prefix your current or previous commands with sudo
+- `Ctrl+r` : history search
 
 ### base64 & JWT
 
@@ -116,7 +117,5 @@ revoir le readme
   documenter les raccourci
   documenter les plugins choisi
 repasser sur le nommage
-
-history search
 
 where is navi ?
