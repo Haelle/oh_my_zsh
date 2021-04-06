@@ -34,6 +34,7 @@ alias pipr='sudo -H pip install -r requirements.pip'
 alias npx ='npx --no-install'
 
 # Vim
+alias vim=nvim
 alias update-vim='(cd ~/.vim_runtime && git stash && git pull --rebase && git stash pop)'
 alias vfzf='vim -o `fzf`'
 
