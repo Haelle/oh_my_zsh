@@ -11,3 +11,5 @@
     path: ~/.zshrc
     line: source $HOME/.aliases
     state: present
+  become: 'yes'
+  become_user: '{{ item }}'
