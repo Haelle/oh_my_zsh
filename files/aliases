@@ -31,7 +31,7 @@ victory() { echo " ୧(•̀ᴗ•́)୨"; }
 alias pipr='sudo -H pip install -r requirements.pip'
 
 # npx NO INSTALL
-alias npx ='npx --no-install'
+alias npx='npx --no-install'
 
 # Vim
 alias vim=nvim
