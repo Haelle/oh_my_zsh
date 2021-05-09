@@ -10,4 +10,4 @@
   lineinfile:
     path: ~/.zshrc
     line: source $HOME/.aliases
-    create: 'yes'
+    state: present

@@ -30,3 +30,4 @@ zsh_plugins:
 
 fonts_path: ~/.local/share/fonts/
 rbenv_installed: false
+nvm_installed: false
