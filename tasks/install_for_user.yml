@@ -69,3 +69,4 @@
       eval "$(rbenv init -)"
   become: 'yes'
   become_user: '{{ item }}'
+  when: rbenv_installed | bool

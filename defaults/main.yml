@@ -29,3 +29,4 @@ zsh_plugins:
   - zsh-syntax-highlighting
 
 fonts_path: ~/.local/share/fonts/
+rbenv_installed: false
