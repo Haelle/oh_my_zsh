@@ -36,10 +36,10 @@
   become: 'yes'
   become_user: '{{ item }}'
 
-- name: Set Vim a EDITOR
+- name: Set NeoVim a EDITOR
   lineinfile:
     path: ~/.zshrc
-    line: 'export EDITOR=vim'
+    line: 'export EDITOR=nvim'
     state: present
   become: 'yes'
   become_user: '{{ item }}'
