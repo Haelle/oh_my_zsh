@@ -40,3 +40,6 @@ alias vfzf='vim -o `fzf`'
 
 # Read SSL Certificates
 alias ssl-cert='openssl x509 -text -noout -in'
+
+# Show all fails in Fail2ban
+alias fail2ban-all="sudo sh -c \"fail2ban-client status | sed -n 's/,//g;s/.*Jail list://p' | xargs -n1 fail2ban-client status\""
