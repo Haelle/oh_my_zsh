@@ -71,3 +71,11 @@
   become: 'yes'
   become_user: '{{ item }}'
   when: rbenv_installed | bool
+
+- name: Enable local/bin into PATH
+  lineinfile:
+    path: ~/.zshrc
+    line: 'export PATH="$HOME/.local/bin:$PATH"'
+    state: present
+  become: 'yes'
+  become_user: '{{ item }}'
