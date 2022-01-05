@@ -9,6 +9,7 @@ zsh_plugins:
   - command-not-found
   - common-aliases
   - debian
+  - direnv
   - dirhistory
   - docker
   - docker-compose
