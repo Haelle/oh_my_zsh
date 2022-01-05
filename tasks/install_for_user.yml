@@ -79,3 +79,11 @@
     state: present
   become: 'yes'
   become_user: '{{ item }}'
+
+- name: Enable using [] in command line (Rake)
+  lineinfile:
+    path: ~/.zshrc
+    line: 'unsetopt nomatch'
+    state: present
+  become: 'yes'
+  become_user: '{{ item }}'
