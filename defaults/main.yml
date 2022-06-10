@@ -13,6 +13,7 @@ zsh_plugins:
   - dirhistory
   - docker
   - docker-compose
+  - dotenv
   - encode64
   - fzf
   - gem
