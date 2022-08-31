@@ -1,5 +1,7 @@
 # Ansible Oh-my-zsh
 
+[⚠ Change the default font in the terminal ⚠](https://github.com/romkatv/powerlevel10k#manual-font-installation)
+
 An Ansible role to install oh-my-zsh with few plugins.
 
 This role install Meslo LGS NF fonts for PowerLevel10k, run `p10k configure` in

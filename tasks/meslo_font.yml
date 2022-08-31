@@ -4,27 +4,32 @@
     path: "{{ fonts_path }}"
     mode: "0755"
     state: directory
+  become_user: "{{ item }}"
 
 - name: Download font Regular
   get_url:
     url: https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
     dest: "{{ fonts_path }}/MesloLGS%20NF%20Regular.ttf"
     mode: "0644"
+  become_user: "{{ item }}"
 
 - name: Download font Bold
   get_url:
     url: https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
     dest: "{{ fonts_path }}/MesloLGS%20NF%20Bold.ttf"
     mode: "0644"
+  become_user: "{{ item }}"
 
 - name: Download font Italic
   get_url:
     url: https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
     dest: "{{ fonts_path }}/MesloLGS%20NF%20Italic.ttf"
     mode: "0644"
+  become_user: "{{ item }}"
 
 - name: Download font Bold Italic
   get_url:
     url: https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
     dest: "{{ fonts_path }}/MesloLGS%20NF%20Bold%20Italic.ttf"
     mode: "0644"
+  become_user: "{{ item }}"
