@@ -5,6 +5,7 @@
 #  - bar
 zsh_plugins:
   - ansible
+  - asdf
   - bundler
   - command-not-found
   - common-aliases

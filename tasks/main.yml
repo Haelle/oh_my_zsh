@@ -9,7 +9,12 @@
     - wget
   tags: zsh
 
+- name: Install asdf
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: ~/.asdf
+
 - name: Install oh-my-zsh for users
   include: install_for_user.yml
-  with_items: '{{ users }}'
+  with_items: "{{ users }}"
   tags: zsh

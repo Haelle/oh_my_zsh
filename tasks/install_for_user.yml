@@ -1,7 +1,7 @@
 ---
 - name: Set zsh as default interpreter
   user:
-    name: '{{ item }}'
+    name: "{{ item }}"
     shell: /usr/bin/zsh
 
 - include: oh_my_zsh.yml
@@ -16,33 +16,33 @@
 - name: Enable plugins
   lineinfile:
     path: ~/.zshrc
-    regexp: '^plugins='
+    regexp: "^plugins="
     line: "plugins=({{ zsh_plugins | join(' ') }})"
     state: present
-  become: 'yes'
-  become_user: '{{ item }}'
+  become: "yes"
+  become_user: "{{ item }}"
 
 - name: Copy zsh functions
   copy:
     src: g.zsh
     dest: ~/.oh-my-zsh/custom/g.zsh
-  become: 'yes'
-  become_user: '{{ item }}'
+  become: "yes"
+  become_user: "{{ item }}"
 
 - name: Copy JWT functions
   copy:
     src: jwt.zsh
     dest: ~/.oh-my-zsh/custom/jwt.zsh
-  become: 'yes'
-  become_user: '{{ item }}'
+  become: "yes"
+  become_user: "{{ item }}"
 
 - name: Set NeoVim a EDITOR
   lineinfile:
     path: ~/.zshrc
-    line: 'export EDITOR=nvim'
+    line: "export EDITOR=nvim"
     state: present
-  become: 'yes'
-  become_user: '{{ item }}'
+  become: "yes"
+  become_user: "{{ item }}"
 
 - name: Enable NVM support
   blockinfile:
@@ -54,8 +54,8 @@
       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
       # This loads nvm bash_completion
       [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-  become: 'yes'
-  become_user: '{{ item }}'
+  become: "yes"
+  become_user: "{{ item }}"
   when: nvm_installed | bool
 
 - name: Enable Rbenv support
@@ -68,8 +68,8 @@
         source "/etc/profile.d/rbenv.sh"
       fi
       eval "$(rbenv init -)"
-  become: 'yes'
-  become_user: '{{ item }}'
+  become: "yes"
+  become_user: "{{ item }}"
   when: rbenv_installed | bool
 
 - name: Enable local/bin into PATH
@@ -77,13 +77,13 @@
     path: ~/.zshrc
     line: 'export PATH="$HOME/.local/bin:$PATH"'
     state: present
-  become: 'yes'
-  become_user: '{{ item }}'
+  become: "yes"
+  become_user: "{{ item }}"
 
 - name: Enable using [] in command line (Rake)
   lineinfile:
     path: ~/.zshrc
-    line: 'unsetopt nomatch'
+    line: "unsetopt nomatch"
     state: present
-  become: 'yes'
-  become_user: '{{ item }}'
+  become: "yes"
+  become_user: "{{ item }}"
