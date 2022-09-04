@@ -44,34 +44,6 @@
   become: "yes"
   become_user: "{{ item }}"
 
-- name: Enable NVM support
-  blockinfile:
-    path: ~/.zshrc
-    marker: "# {mark} NVM ANSIBLE BLOCK"
-    block: |
-      export NVM_DIR="$HOME/.nvm"
-      # This loads nvm
-      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-      # This loads nvm bash_completion
-      [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-  become: "yes"
-  become_user: "{{ item }}"
-  when: nvm_installed | bool
-
-- name: Enable Rbenv support
-  blockinfile:
-    path: ~/.zshrc
-    marker: "# {mark} RBENV ANSIBLE BLOCK"
-    block: |
-      # Rbenv
-      if [ -f "/etc/profile.d/rbenv.sh" ]; then
-        source "/etc/profile.d/rbenv.sh"
-      fi
-      eval "$(rbenv init -)"
-  become: "yes"
-  become_user: "{{ item }}"
-  when: rbenv_installed | bool
-
 - name: Enable local/bin into PATH
   lineinfile:
     path: ~/.zshrc
