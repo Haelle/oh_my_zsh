@@ -4,6 +4,7 @@
 #  - foo
 #  - bar
 zsh_plugins:
+  - ag
   - ansible
   - asdf
   - bundler
@@ -21,6 +22,7 @@ zsh_plugins:
   - gitignore
   - jsontools
   - navi
+  - postgres
   - rails
   - ruby
   - sudo
