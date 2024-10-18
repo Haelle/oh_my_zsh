@@ -4,7 +4,6 @@
 #  - foo
 #  - bar
 zsh_plugins:
-  - ag
   - ansible
   - asdf
   - bundler
