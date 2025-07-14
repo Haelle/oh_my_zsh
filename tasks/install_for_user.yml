@@ -4,14 +4,14 @@
     name: "{{ item }}"
     shell: /usr/bin/zsh
 
-- include: oh_my_zsh.yml
-- include: fzf.yml
-- include: navi.yml
-- include: meslo_font.yml
-- include: powerlevel10k.yml
-- include: autosuggestions.yml
-- include: syntax_highlighting.yml
-- include: aliases.yml
+- include_tasks: oh_my_zsh.yml
+- include_tasks: fzf.yml
+- include_tasks: navi.yml
+- include_tasks: meslo_font.yml
+- include_tasks: powerlevel10k.yml
+- include_tasks: autosuggestions.yml
+- include_tasks: syntax_highlighting.yml
+- include_tasks: aliases.yml
 
 - name: Enable plugins
   lineinfile:

@@ -21,6 +21,6 @@
     - ruby
 
 - name: Install oh-my-zsh for users
-  include: install_for_user.yml
+  include_tasks: install_for_user.yml
   with_items: "{{ users }}"
   tags: zsh
