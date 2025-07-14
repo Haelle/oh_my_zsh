@@ -9,17 +9,6 @@
     - wget
   tags: zsh
 
-- name: Install asdf
-  git:
-    repo: https://github.com/asdf-vm/asdf.git
-    dest: ~/.asdf
-
-- name: Install asdf plugins
-  command: "asdf plugin add {{ item }}"
-  loop:
-    - nodejs
-    - ruby
-
 - name: Install oh-my-zsh for users
   include_tasks: install_for_user.yml
   with_items: "{{ users }}"
