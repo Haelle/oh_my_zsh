@@ -43,3 +43,8 @@ alias ssl-cert='openssl x509 -text -noout -in'
 
 # Show all fails in Fail2ban
 alias fail2ban-all="sudo sh -c \"fail2ban-client status | sed -n 's/,//g;s/.*Jail list://p' | xargs -n1 fail2ban-client status\""
+
+# Allow git usage in nginx repository with ease
+alias ngx='sudo --preserve-env=GIT_AUTHOR_NAME,GIT_AUTHOR_EMAIL,GIT_COMMITTER_NAME,GIT_COMMITTER_EMAIL,SSH_AUTH_SOCK,GPG_TTY,GNUPGHOME \
+  env GIT_CONFIG_GLOBAL="$HOME/.gitconfig" \
+  git --git-dir="$HOME/sites-available/.git-nginx" --work-tree=/etc/nginx/sites-available'
