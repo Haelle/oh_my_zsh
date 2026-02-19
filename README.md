@@ -1,6 +1,15 @@
 # Ansible Oh-my-zsh
 
-[⚠ Change the default font in the terminal ⚠](https://github.com/romkatv/powerlevel10k#manual-font-installation)
+## Fonts
+
+You need the latest Meslo Font :
+```
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip
+unzip Meslo.zip -d ~/.local/share/fonts/Meslo
+fc-cache -fv
+```
+
+Old way to install : [⚠ Change the default font in the terminal ⚠](https://github.com/romkatv/powerlevel10k#manual-font-installation)
 
 An Ansible role to install oh-my-zsh with few plugins.
 
